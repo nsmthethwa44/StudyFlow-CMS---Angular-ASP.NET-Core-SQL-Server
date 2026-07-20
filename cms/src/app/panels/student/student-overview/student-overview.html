@@ -43,7 +43,10 @@
         </div>
 
         <div class="enrolled-courses">
-            <div class="box" *ngFor="let item of enrolled">
+            @if(enrolled.length === 0){
+                <app-loader></app-loader>   
+            }@else{
+                   <div class="box" *ngFor="let item of enrolled">
                 <div class="box-img"><img [src]="`${displayImage(item.thumbnailPath)}`" alt={{item.title}} class="img-box"></div>
                 <div class="text-box">
                     <h3>{{item.title}}</h3>
@@ -57,6 +60,9 @@
                     </div>
                 </div>
             </div>
+            }
+               
+         
         </div>
       </div>
 </div>

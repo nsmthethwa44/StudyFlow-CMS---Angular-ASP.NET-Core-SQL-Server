@@ -7,10 +7,11 @@ import { environment } from '../../../environments/environment';
 import { Login } from '../../auth/login/login';
 import { Register } from '../../auth/register/register';
 import { HostListener } from '@angular/core';
+import { Loader } from '../../components/loader/loader';
 
 @Component({
   selector: 'app-popular-courses',
-  imports: [CommonModule, Register, Login],
+  imports: [CommonModule, Register, Login, Loader],
   templateUrl: './popular-courses.html',
   styleUrl: './popular-courses.scss',
 })

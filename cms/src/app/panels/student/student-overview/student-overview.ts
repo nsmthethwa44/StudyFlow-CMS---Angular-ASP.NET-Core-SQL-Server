@@ -10,10 +10,10 @@ import { ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { StudentDashboardSummary } from '../../../models/dashboard-model';
 import { DashboardService } from '../../../services/dashboard-service/dashboard-service';
-
+import { Loader } from '../../../components/loader/loader'; 
 @Component({
   selector: 'app-student-overview',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, Loader],
   templateUrl: './student-overview.html',
   styleUrl: './student-overview.scss',
 })

@@ -176,7 +176,7 @@ ng build --configuration production
 
 ## Links
 
-- Live Demo: Coming Soon
+- Live Demo: [https://studyflowcms.netlify.app/](https://studyflowcms.netlify.app/)
 - GitHub Repository: This Repository
 
 ---

@@ -13,7 +13,10 @@
         </div>
 
         <div class="content">
-            <div class="box" *ngFor="let item of courses.slice(0, 3)">
+            @if(courses.length == 0 || courses == null){
+                <app-loader></app-loader>
+            }@else{
+                 <div class="box" *ngFor="let item of courses.slice(0, 3)">
                 <div class="box-img"><img [src]="`${displayImage(item.thumbnailPath)}`" alt={{item.title}} class="img-box"></div>
                 <span class="category">{{item.category}}</span>
                 <!-- <span class="level">{{item.level}}</span> -->
@@ -33,6 +36,8 @@
                     </div>
                 </div>
             </div>
+            }
+           
             
         </div>
     </div>
