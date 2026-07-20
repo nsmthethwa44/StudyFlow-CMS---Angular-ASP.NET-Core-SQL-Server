@@ -76,7 +76,7 @@ builder.Services.AddCors(options =>
         policy.AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials()
-              .WithOrigins("https://estateflowsystem.netlify.app", "http://localhost:4200"));
+              .WithOrigins("https://studyflowcms.netlify.app", "http://localhost:4200"));
 });
 
 builder.Services.AddAuthorization();
