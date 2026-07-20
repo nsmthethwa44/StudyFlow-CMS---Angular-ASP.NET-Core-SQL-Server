@@ -1,0 +1,43 @@
+<section class="section popular-courses" id="popular-courses">
+    <div class="container">
+
+        <div class="sec-title">
+            <div class="text">
+                <div class="separator"><div class="divider"></div><span>Our Programs</span></div>
+                <h2>Popular Courses</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, vitae dignissimos dolor velit fugiat harum!</p>
+            </div>
+            <div class="buttons">
+                <button class="btn">View All Learnerships</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="box" *ngFor="let item of courses.slice(0, 3)">
+                <div class="box-img"><img [src]="`${displayImage(item.thumbnailPath)}`" alt={{item.title}} class="img-box"></div>
+                <span class="category">{{item.category}}</span>
+                <!-- <span class="level">{{item.level}}</span> -->
+                <div class="text">
+                    <ul class="ratings">
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                    <div class="more-info">
+                        <h3 class="course-price">{{item.price | currency: "R"}}</h3>
+                        <span (click)="showLogin()">Enroll <i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- auth  -->
+ <app-login [isVisible]="isLoginVisible" (switchToRegister)="showRegister()"></app-login>
+ <app-register [isVisible]="isRegisterVisible" (switchToLogin)="showLogin()"></app-register>

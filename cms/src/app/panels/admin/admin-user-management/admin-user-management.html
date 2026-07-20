@@ -1,0 +1,29 @@
+<div class="user-management">
+    <div class="main-title">
+        <h2>User Management</h2>
+        <button class="btn" (click)="toggleAddUserForm();"><i class="fa-solid fa-plus"></i> New User</button>
+    </div>
+
+    <div class="table-content-box">
+        <table class="table">
+            <thead>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Joined</th>
+                    <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users">
+                    <td><span class="name">{{item.firstName}} {{item.lastName}}</span></td>
+                    <td>{{item.email}}</td>
+                    <td><span class="role">{{ getUserRole(item.role) }}</span></td>
+                    <td>{{ item.createdAt | date:'dd/MM/yyyy' }}</td>
+                    <td><span class="action">Edit</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-admin-add-user [isVisible]="isVisible" (userCreated)="getUsers()" (closeForm)="isVisible = false"></app-admin-add-user>

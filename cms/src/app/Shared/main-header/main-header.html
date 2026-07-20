@@ -1,0 +1,16 @@
+<header class="main-header">
+    <div class="content">
+        <div class="menu-box" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" name="search" class="search" placeholder="Search..."></div>
+
+        <div class="info">
+            <div class="alert"><i class="fa-solid fa-bell"></i></div>
+            <div class="separator"></div>
+            <div class="details" *ngIf="loggedInUser | async as user;">
+                <!-- <span class="initials"> {{ user.fullName.charAt(0).toUpperCase() }}</span> -->
+                 <span class="initials">{{ getInitials(user.fullName) }}</span>
+                <h3>{{user?.fullName}}<br><span>{{user.role}}</span></h3>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,19 @@
+<div class="dashboard hide-sidebar">
+    <!-- sidebar  -->
+     <app-sidebar role="instructor"></app-sidebar>
+
+    <!-- main  -->
+     <div class="main">
+        <div class="main-content">
+               <!-- header  -->
+             <app-main-header></app-main-header>
+
+              <div class="overview">
+                <router-outlet></router-outlet>
+              </div>
+        </div>
+        
+       <!-- copyright  -->
+            <app-main-copyright></app-main-copyright>
+     </div>
+</div>

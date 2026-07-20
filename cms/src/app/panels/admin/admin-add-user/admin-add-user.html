@@ -1,0 +1,28 @@
+<div class="admin-add-user" *ngIf="isVisible">
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+        <h3>Add New User</h3>
+        <div class="close" (click)="closeToggleAddUserForm()"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="separator"></div>
+
+        <div class="input-box">
+            <label for="firstname">First Name: <input type="text" class="textBox" placeholder="e.g Damon" formControlName="firstName"></label>
+            <label for="lastname">Last Name: <input type="text" class="textBox" placeholder="e.g Mkhize" formControlName="lastName"></label>
+            <label for="email">Email: <input type="text" class="textBox" placeholder="damon@gmail.com" formControlName="email"></label>
+            <label for="phone">Phone: <input type="text" class="textBox" placeholder="e.g 123 456 5653" formControlName="phoneNumber"></label>
+              <label for="password">Password: <input type="text" class="textBox" placeholder="password" formControlName="password"></label>
+            <label for="role">Select Role:
+                <select class="textBox" formControlName="role">
+                    <option [ngValue]="null">Select New User Role</option>
+                    <option [ngValue]="1">Admin</option>
+                    <option [ngValue]="2">Instructor</option>
+                    <option [ngValue]="3">Student</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i>Save</button>
+        </div>
+    </form>
+</div>

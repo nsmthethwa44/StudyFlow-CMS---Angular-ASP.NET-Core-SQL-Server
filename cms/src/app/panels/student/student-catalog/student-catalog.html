@@ -1,0 +1,41 @@
+<div class="courses-catalog">
+    <div class="main-title">
+        <h2>Courses Catalog</h2>
+        <p>Discover courses to advanced your skills</p>
+    </div>
+
+    <!-- search box  -->
+     <div class="search-box">
+        <div class="input"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="search" placeholder="Search courses..."></div>
+        <div class="filter"><i class="fa-solid fa-filter"></i></div>
+     </div>
+
+     <!-- catalog  -->
+      <div class="catalog">
+        <div class="box" *ngFor="let item of courses">
+            <div class="box-img">
+                <img [src]="`${displayImage(item.thumbnailPath)}`" alt="" class="img-box">
+                <span class="category">{{item.category}}</span>
+            </div>
+            <div class="text-box">
+                 <ul class="ratings">
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                    </ul>
+                <h3 class="course-title">{{item.title}}</h3>
+                <p>{{item.description}}</p>
+                 <ul>
+                        <li><i class="fa-solid fa-clock"></i>23h</li>
+                        <li><i class="fa-solid fa-star"></i>67</li>
+                    </ul>
+                <div class="price">
+                    <h3 class="course-price">{{item.price | currency: "R"}}</h3>
+                    <span  class="enroll" (click)="enroll(item.id)">Enroll<i class="fa-solid fa-angle-right"></i></span>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>

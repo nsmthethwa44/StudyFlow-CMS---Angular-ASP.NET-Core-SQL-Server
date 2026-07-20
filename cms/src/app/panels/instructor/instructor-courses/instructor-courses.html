@@ -1,0 +1,38 @@
+<div class="instructor-course-builder">
+     <div class="main-title">
+        <div class="title-page">
+            <h2>Course Builder</h2>
+            <p>Create and manage Courses</p>
+        </div>
+        <button class="btn" (click)="showCourseBuilder()"><i class="fa-solid fa-plus"></i>New Course</button>
+    </div>
+
+    <!-- courses list  -->
+    <div class="courses-container">
+        @if(courses.length == 0){
+            <p>No courses found yet</p>
+        }@else{
+        <div class="box" *ngFor="let item of courses">
+            <div class="text-box">
+                <div class="box-img"><img [src]="`${displayImage(item.thumbnailPath)}`" alt="" class="img-box"></div>
+                <div class="text">
+                    <h3>{{item.title}}<span>Published</span></h3>
+                    <p>{{item.description}}</p>
+                    <ul>
+                        <li><i class="fa-solid fa-users"></i>454</li>
+                        <li><i class="fa-solid fa-star"></i>6</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="controls">
+                <span class="edit">Edit</span>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        </div>
+        }
+       
+    </div>
+
+</div>
+
+<app-instructor-add-courses [isVisible]="isVisible" (courseCreated)="closeCourseBuilder()"></app-instructor-add-courses>

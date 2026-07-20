@@ -1,0 +1,32 @@
+<div class="auth" *ngIf="isVisible">
+    <form [formGroup]="form" class="form login" (ngSubmit)="register()">
+        <div class="close" (click)="closeRegister()"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="logo">
+            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <h3>Create Your Account</h3>
+            <p>Sign up to get Started</p>
+        </div>
+
+        <button class="google-btn"><img src="assets\img\google_20px.png" alt="">Continue With Google</button>
+
+        <div class="separator"><span>Or</span></div>
+
+        <div class="input-box">
+            <label for="name">
+                First Name: <input type="text" name="" class="textBox" id="" placeholder="Your name" formControlName="firstName" autocomplete="name">
+                <span class="error" *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched">Name is required</span>
+            </label>
+            <label for="email">
+                Email: <input type="email" name="" class="textBox" id="" placeholder="Email" formControlName="email" autocomplete="email">
+                <span class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email is required</span>
+            </label>
+            <label for="password">
+                Password: <input type="password" name="" class="textBox" id="" placeholder="Password" formControlName="password" autocomplete="current-password">
+                <span class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Password is required (min 5)</span>
+            </label>
+            <button type="submit" class="btn">Create Account<i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+        <a href="#">Already have an account? <span (click)="showLogin()">Log In</span></a>
+    </form>
+</div>

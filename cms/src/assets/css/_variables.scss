@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: --Montserrat-Medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: --Montserrat-Black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
+
+$pff: --Montserrat-Medium;
+
+:root{
+    --ff: --Montserrat-Medium;
+    --hff: --Montserrat-Black;
+    --primary-color: #1B3147;
+    --secondary-color: #F37D26;
+    --gray: #4B5563;
+    --white: #fff;
+    --light: #F9FAFB;
+    --navy: #1B3147;
+    --border-color: #ebe6e7;
+
+    --fsp: 0.8rem;
+    --boxShadow: 0 0 15px 0px rgba(0, 0, 0, 0.089);
+    --transition: all 400ms ease;
+}

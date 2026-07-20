@@ -1,0 +1,56 @@
+<div class="instructor-main-overview">
+      <!-- main title  -->
+    <div class="main-title">
+        <h2>Instructor Panel</h2>
+        <p>Course management and analytics</p>
+    </div>
+
+    <!-- stats  -->
+<div class="stats">
+    <div class="box">
+        <i class="fa-solid fa-users"></i>
+        <h2>{{ summary?.totalStudents || 0}}</h2>
+        <p>Total Students</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-book"></i>
+        <h2>{{ summary?.publishedCourses || 0}}</h2>
+        <p>Published Courses</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h2>{{ summary?.activeEnrollments || 0}}</h2>
+        <p>Active Enrollments</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-award"></i>
+        <h2>{{ summary?.certificatesIssued || 0 }}</h2>
+        <p>Certificates Issued</p>
+    </div>
+</div>
+
+      <div class="table-content-box">
+        <table class="table">
+            <thead>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Price Paid</th>
+                    <th>Enrolled</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                   <td><span class="name">{{ student.firstName }} {{ student.lastName }}</span></td>
+                    <td>{{ student.email }}</td>
+                    <td>{{student.title}}</td>
+                    <td><span class="price">{{student.pricePaid | currency:'R' }}</span></td>
+                    <td>{{ student.enrolledAt | date:'dd/MM/yyyy' }}</td>
+                </tr>   
+        </table>
+    </div>
+</div>
+
+   

@@ -1,0 +1,25 @@
+<div class="instructor-students">
+    <div class="main-title">
+        <h2>My Students</h2>
+    </div>
+
+    <div class="table-content-box">
+        <table class="table">
+            <thead>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Price Paid</th>
+                    <th>Enrolled</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                   <td><span class="name">{{ student.firstName }} {{ student.lastName }}</span></td>
+                    <td>{{ student.email }}</td>
+                    <td>{{student.title}}</td>
+                    <td><span class="price">{{student.pricePaid | currency:'R' }}</span></td>
+                    <td>{{ student.enrolledAt | date:'dd/MM/yyyy' }}</td>
+                </tr>   
+        </table>
+    </div>
+</div>

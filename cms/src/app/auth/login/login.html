@@ -1,0 +1,28 @@
+<div class="auth" *ngIf="isVisible">
+    <form [formGroup]="form" class="form login" (ngSubmit)="login()">
+        <div class="close" (click)="closeLogin()"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="logo">
+            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <h3>Welcome Back</h3>
+            <p>Login to your Account</p>
+        </div>
+
+        <button class="google-btn"><img src="assets\img\google_20px.png" alt="">Continue With Google</button>
+
+        <div class="separator"><span>Or</span></div>
+
+        <div class="input-box">
+            <label for="">
+                Email: <input type="email" name="" class="textBox" id="" placeholder="Email" autocomplete="email" formControlName="email">
+                <span class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email is required</span>
+            </label>
+            <label for="">Password: <input type="password" name="" class="textBox" id="" placeholder="Password" autocorrect="current-password" formControlName="password">
+                <span class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">Password is required (min 5)</span>
+            </label>
+            <span class="forgot-pass">Forgot Password</span>
+            <button type="submit" class="btn">Login<i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+        <a href="#">Don't have an account? <span (click)="showRegister()">Create  one</span></a>
+    </form>
+</div>

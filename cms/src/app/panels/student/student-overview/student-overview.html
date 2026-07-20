@@ -1,0 +1,62 @@
+<div class="student-main-overview">
+    <div class="main-title">
+        <div class="page-title" *ngIf="loggedInUser | async as user;">
+            <h2>Welcom back, {{user?.fullName}} 👋</h2>
+            <p>Continue your learning journey</p>
+        </div>
+
+        <span class="explore"><i class="fa-solid fa-book"></i>Explore Courses</span>
+    </div>
+
+    <!-- stats  -->
+   <div class="stats">
+    <div class="box">
+        <i class="fa-solid fa-book-open"></i>
+        <h2>{{ summary?.activeCourses || 0}}</h2>
+        <p>Active Courses</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-bookmark"></i>
+        <h2>{{ summary?.completedCourses || 0}}</h2>
+        <p>Completed</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-clock"></i>
+        <h2>{{ summary?.hoursLearned || 0}}</h2>
+        <p>Hours Learned</p>
+    </div>
+
+    <div class="box">
+        <i class="fa-solid fa-award"></i>
+        <h2>{{ summary?.certificates || 0}}</h2>
+        <p>Certificates</p>
+    </div>
+</div>
+
+     <!-- student courses  -->
+      <div class="student-enrolled-courses">
+        <div class="enrolled-title">
+            <h3>Continue Learning</h3>
+            <span [routerLink]="['/student/my-courses']" routerLinkActive="router-link-active" >View All<i class="fa-solid fa-angle-right"></i></span>
+        </div>
+
+        <div class="enrolled-courses">
+            <div class="box" *ngFor="let item of enrolled">
+                <div class="box-img"><img [src]="`${displayImage(item.thumbnailPath)}`" alt={{item.title}} class="img-box"></div>
+                <div class="text-box">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                    <ul>
+                        <li><i class="fa-solid fa-clock"></i>23h</li>
+                        <li><i class="fa-solid fa-star"></i>67</li>
+                    </ul>
+                    <div class="continue">
+                        <span>Continue<i class="fa-solid fa-angle-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>

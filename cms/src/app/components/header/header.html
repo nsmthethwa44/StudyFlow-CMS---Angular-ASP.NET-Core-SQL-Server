@@ -1,0 +1,47 @@
+<header class="header" [class.scrolled]="isScrolled">
+    <div class="top">
+        <div class="container">
+            <ul class="info">
+                <li class="phone"><i class="fa-solid fa-phone"></i>0123456789</li>
+                <li><i class="fa-solid fa-envelope"></i>sales@studyflow.co.za</li>
+            </ul>
+
+            <ul class="sci">
+                <li><i class="fa-brands fa-facebook-f"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+                <span (click)="showLogin()">E-learning Login<i class="fa-solid fa-right-to-bracket"></i></span>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="container">
+            <div class="logo">
+                <h2><span><i class="fa-solid fa-graduation-cap"></i></span>StudyFlow</h2>
+            </div>
+
+            <div class="menu" (click)="toggleNavBar()"><i class="fa-solid fa-bars"></i></div>
+
+            <div class="navbar" [class.active]="isNavBarOpen">
+                <div class="close" (click)="closeNavbar()"><i class="fa-solid fa-xmark"></i></div>
+                <ul class="nav">
+                    <li><a href="#home" class="active" (click)="closeNavbar()">Home</a></li>
+                    <li><a href="#about" (click)="closeNavbar()">Company</a></li>
+                    <li><a href="#training" (click)="closeNavbar()">Training</a></li>
+                    <li><a href="#business" (click)="closeNavbar()">Business Solutions</a></li>
+                    <li><a href="#blog" (click)="closeNavbar()">Blog</a></li>
+                    <li><a href="#faq" (click)="closeNavbar()">FAQs</a></li>
+                    <li><a href="#contact" (click)="closeNavbar()">Contact Us</a></li>
+                </ul>
+
+                <button class="btn" (click)="showLogin()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- auth  -->
+ <app-login [isVisible]="isLoginVisible" (switchToRegister)="showRegister()"></app-login>
+ <app-register [isVisible]="isRegisterVisible" (switchToLogin)="showLogin()"></app-register>
