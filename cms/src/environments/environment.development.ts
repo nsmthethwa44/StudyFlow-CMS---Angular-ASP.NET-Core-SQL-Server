@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: "http://localhost:5218",
+    apiUrl: "https://studyflow-cms-angular-asp-net-core-sql.onrender.com",
 };

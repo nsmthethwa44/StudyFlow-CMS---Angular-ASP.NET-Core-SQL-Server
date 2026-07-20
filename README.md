@@ -1,11 +1,11 @@
-# CourseFlow – Course Management System - (Angular, ASP.NET Core Web API, SQL Server)
+# StudyFlow – Course Management System - (Angular, ASP.NET Core Web API, SQL Server)
 
-CourseFlow is a full-stack, role-based Learning Management System (LMS) that enables administrators, instructors, and students to manage courses, enrollments, learning progress, discussions, and certificates through a modern, scalable platform.
+StudyFlow is a full-stack, role-based Learning Management System (LMS) that enables administrators, instructors, and students to manage courses, enrollments, learning progress, discussions, and certificates through a modern, scalable platform.
 
 ---
 
 ## Project Overview:
-CourseFlow simulates how modern online learning platforms operate by providing complete course lifecycle management—from course creation and publishing to student enrollment, lesson completion, certification, and analytics. The system emphasizes maintainable architecture, role-based workflows, and real-world business processes.
+StudyFlow simulates how modern online learning platforms operate by providing complete course lifecycle management—from course creation and publishing to student enrollment, lesson completion, certification, and analytics. The system emphasizes maintainable architecture, role-based workflows, and real-world business processes.
 
 ---
 
